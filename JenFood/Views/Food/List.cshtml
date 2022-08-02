@@ -1,0 +1,11 @@
+@model FoodsListViewModel
+
+<h2>@Model.CurrentCategory</h2>  
+@foreach (var food in Model.Foods)
+{
+    <div>
+        <h2>@food.Name</h2>
+        <h3>@food.Price</h3>
+        <h4>@food.Category.CategoryName</h4>
+    </div>
+}
