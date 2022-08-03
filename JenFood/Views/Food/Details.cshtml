@@ -1,0 +1,15 @@
+@model JenKitchen.Models.Food
+
+<h2>@Model.Name</h2>
+
+<div class="img-fluid">
+    <img alt="@Model.Name" src=@Model.ImageUrl class="card-img"/>
+    <div class="text-body">
+        <h3>
+            <a href="#">@Model.Name</a>
+        </h3>
+        <h4>@Model.ShortDescription</h4>
+        <p>@Model.LongDescription</p>
+        <h5>@Model.Price GBP</h5>
+    </div>
+</div>

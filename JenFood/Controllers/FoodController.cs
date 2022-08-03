@@ -28,5 +28,19 @@ namespace JenKitchen.Controllers
             
             return View(foodsListViewModel);
         }
+
+        public IActionResult Details(int id)
+        {
+            var food = _foodRepository.GetFoodById(id);
+            if (food==null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return View(food);
+            }
+            
+        }
     }
 }

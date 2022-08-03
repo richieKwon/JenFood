@@ -8,12 +8,12 @@
         // var imagePath =  "" + food.FoodId + ".jpg" 
         <div class="col-lg-4">
             <div class="card" style="width: 18rem;">
-                <img src="@food.ImageThumbnailUrl" class="card-img-top" alt="...">
+                <img src="@food.ImageThumbnailUrl" class="card-img-top" alt="..." style="height: 18rem">
                 <div class="card-body">
-                    <h5 class="card-title">@food.Name</h5>
+                    <h5 class="card-title text-success">@food.Name</h5>
                     <p class="card-text">@food.ShortDescription</p>
-                    <h5 class="card-text">@food.Price.ToString() GBP</h5>
-                    @* <a href="#" class="btn btn-primary">Go somewhere</a> *@
+                    <h6 class="card-text">@food.Price.ToString() GBP</h6>
+                    <a asp-controller="Food" asp-action="Details" asp-route-id="@food.FoodId">Details</a>
                 </div>
             </div>
         </div>
