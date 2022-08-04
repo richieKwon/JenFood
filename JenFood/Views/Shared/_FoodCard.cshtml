@@ -1,0 +1,13 @@
+@model JenKitchen.Models.Food
+
+<div class="col-lg-4">
+    <div class="card" style="width: 18rem;">
+        <img src="@Model.ImageThumbnailUrl" class="card-img-top" alt="..." style="height: 18rem">
+        <div class="card-body">
+            <h5 class="card-title text-success">@Model.Name</h5>
+            <p class="card-text">@Model.ShortDescription</p>
+            <h6 class="card-text">@Model.Price.ToString() GBP</h6>
+            <a asp-controller="Food" asp-action="Details" asp-route-id="@Model.FoodId">Details</a>
+        </div>
+    </div>
+</div>

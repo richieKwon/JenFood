@@ -5,18 +5,21 @@
 <div class="row">
     @foreach (var food in Model.Foods)
     {
-        // var imagePath =  "" + food.FoodId + ".jpg" 
-        <div class="col-lg-4">
-            <div class="card" style="width: 18rem;">
-                <img src="@food.ImageThumbnailUrl" class="card-img-top" alt="..." style="height: 18rem">
-                <div class="card-body">
-                    <h5 class="card-title text-success">@food.Name</h5>
-                    <p class="card-text">@food.ShortDescription</p>
-                    <h6 class="card-text">@food.Price.ToString() GBP</h6>
-                    <a asp-controller="Food" asp-action="Details" asp-route-id="@food.FoodId">Details</a>
-                </div>
-            </div>
-        </div>
+        
+        <partial name="_FoodCard" model="food"/>
+        
+        
+        @* <div class="col-lg-4"> *@
+        @*     <div class="card" style="width: 18rem;"> *@
+        @*         <img src="@food.ImageThumbnailUrl" class="card-img-top" alt="..." style="height: 18rem"> *@
+        @*         <div class="card-body"> *@
+        @*             <h5 class="card-title text-success">@food.Name</h5> *@
+        @*             <p class="card-text">@food.ShortDescription</p> *@
+        @*             <h6 class="card-text">@food.Price.ToString() GBP</h6> *@
+        @*             <a asp-controller="Food" asp-action="Details" asp-route-id="@food.FoodId">Details</a> *@
+        @*         </div> *@
+        @*     </div> *@
+        @* </div> *@
     }
 </div>
 @* @foreach (var food in Model.Foods) *@
