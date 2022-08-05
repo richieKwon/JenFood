@@ -6,28 +6,37 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using JenFood.Models;
+using JenKitchen.Models;
+using JenKitchen.ViewModels;
 
 namespace JenFood.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IFoodRepository _foodRepository;
+        // private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        // public HomeController(ILogger<HomeController> logger)
+        // {
+        //     _logger = logger;
+        // }
+
+        public HomeController(IFoodRepository foodRepository)
         {
-            _logger = logger;
+            _foodRepository = foodRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var homeViewModel = new HomeViewModel() { FoodsOfTheWeek  = _foodRepository.FoodsOfTheWeek };
+            return View(homeViewModel);
         }
 
         public IActionResult Privacy()
         {
             return View();
         }
-
+        
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
