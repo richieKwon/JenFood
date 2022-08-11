@@ -13,7 +13,7 @@ namespace JenFood.Models
     {
         private readonly AppDbContext _appDbContext;
 
-        public string ShoppingCartId { get; set; }
+        public string ShoppingCartId {  get; set; }
 
         public List<ShoppingCartItem> ShoppingCartItems { get; set; }
 
