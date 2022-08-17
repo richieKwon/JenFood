@@ -19,7 +19,7 @@ namespace JenFood.Models
 
         public ShoppingCart(AppDbContext appDbContext)
         {
-            _appDbContext = appDbContext;
+            _appDbContext = appDbContext; 
 
         }
 
@@ -100,7 +100,7 @@ namespace JenFood.Models
             _appDbContext.SaveChanges();
         }
 
-        public decimal GetShoppingCartTotal()
+        public decimal GetShoppingCartTotal() 
         {
             var total = _appDbContext.ShoppingCartItems.Where(c => c.ShoppingCartId == ShoppingCartId)
                 .Select(c => c.Food.Price * c.Amount).Sum();

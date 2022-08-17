@@ -31,6 +31,7 @@ namespace JenFood
             services.AddScoped<IFoodRepository, FoodRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
+            services.AddHttpContextAccessor();
             services.AddControllersWithViews();
         }
 
