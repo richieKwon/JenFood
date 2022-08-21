@@ -10,6 +10,12 @@
         </h3>
         <h4>@Model.ShortDescription</h4>
         <p>@Model.LongDescription</p>
-        <h  5>@Model.Price GBP</h>
+        <h5>@Model.Price GBP</h5>
+    </div>
+    <div class="addToCart">
+        <p class="button">
+            <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
+               asp-route-foodId="@Model.FoodId">Add to your cart</a>
+        </p>
     </div>
 </div>

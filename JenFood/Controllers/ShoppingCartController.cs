@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using JenFood.Models;
 using JenKitchen.Models;
+using JenKitchen.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JenFood.Controllers
@@ -48,6 +49,14 @@ namespace JenFood.Controllers
         public RedirectToActionResult RemoveFromShoppingCart(int foodId)
         {
             var selectedFood = _foodRepository.AllFoods.FirstOrDefault(food => food.FoodId == foodId);
+
+            if (selectedFood != null)
+            {
+                _shoppingCart.RemoveFromCart(selectedFood);
+            }
+
+            return RedirectToAction("Index");
+
         }
 
 

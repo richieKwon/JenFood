@@ -9,5 +9,10 @@
             <h6 class="card-text">@Model.Price.ToString() GBP</h6>
             <a asp-controller="Food" asp-action="Details" asp-route-id="@Model.FoodId">Details</a>
         </div>
+        <div class="addToCart">
+            <p class="button">
+                <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-foodId="@Model.FoodId">Add to your cart</a>
+            </p>
+        </div>
     </div>
 </div>
