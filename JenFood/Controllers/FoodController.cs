@@ -19,16 +19,16 @@ namespace JenKitchen.Controllers
             _categoryRepository = categoryRepository;
         }
         
-        public IActionResult List()
-        {
-            // ViewBag.CurrentCategory = "BBQ";
-            FoodsListViewModel foodsListViewModel = new FoodsListViewModel();
-            foodsListViewModel.Foods = _foodRepository.AllFoods;
-            foodsListViewModel.CurrentCategory = "BBQ";
-            
-            return View(foodsListViewModel);
-        }
-
+        // public IActionResult List()
+        // {
+        //     // ViewBag.CurrentCategory = "BBQ";
+        //     FoodsListViewModel foodsListViewModel = new FoodsListViewModel();
+        //     foodsListViewModel.Foods = _foodRepository.AllFoods;
+        //     foodsListViewModel.CurrentCategory = "BBQ";
+        //     
+        //     return View(foodsListViewModel);
+        // }
+        
         public IActionResult Details(int id)
         {
             var food = _foodRepository.GetFoodById(id);
@@ -41,6 +41,26 @@ namespace JenKitchen.Controllers
                 return View(food);
             }
             
+        }
+
+        public ViewResult List(string category)
+        {
+            IEnumerable<Food> foods;
+            string currentCategory;
+
+            if (string.IsNullOrEmpty(category))
+            {
+                foods = _foodRepository.AllFoods.OrderBy(f => f.FoodId);
+                currentCategory = "All foods";
+            }
+            else
+            {
+                foods = _foodRepository.AllFoods.Where(f => f.Category.CategoryName == category).OrderBy(f => f.FoodId);
+                currentCategory = _categoryRepository.Allcategories.FirstOrDefault(c => c.CategoryName == category)
+                    .CategoryName;
+            }
+
+            return View(new FoodsListViewModel { Foods = foods, CurrentCategory = currentCategory});
         }
     }
 }

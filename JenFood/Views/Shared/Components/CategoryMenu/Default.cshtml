@@ -1,0 +1,24 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model IEnumerable<JenKitchen.Models.Category>
+
+<li>
+    <a asp-controller="Food"
+       asp-action="List"
+       class="dropdown-toggle" data-toggle ="dropdown">Foods<b class="caret"></b></a>
+    <ul class="dropdown-menu">
+        @foreach (var category in Model)
+        {
+            <li>
+                <a asp-controller="Food" asp-action="List"
+                   asp-route="@category.CategoryName">@category.CategoryName</a>
+            </li>
+        }
+        <li class="dropdown-divider"></li>
+        <li>
+            <a asp-controller="Food" asp-action="List" asp-route="">View all fooods</a>
+        </li>
+
+    </ul>
+    
+</li>
+
