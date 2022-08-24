@@ -9,7 +9,10 @@ namespace JenFood.TagHelpers
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            base.Process(context, output);
+            output.TagName = "a";
+            output.Attributes.SetAttribute("href", "mailto:" + Address);
+            output.Content.SetContent(Content);
+            // base.Process(context, output);
         }
     }
 }

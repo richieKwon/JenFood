@@ -1,7 +1,7 @@
 @using Microsoft.AspNetCore.Mvc.TagHelpers
 @model IEnumerable<JenKitchen.Models.Category>
 
-<li>
+<li class="dropdown">
     <a asp-controller="Food"
        asp-action="List"
        class="dropdown-toggle" data-toggle ="dropdown">Foods<b class="caret"></b></a>
@@ -10,12 +10,12 @@
         {
             <li>
                 <a asp-controller="Food" asp-action="List"
-                   asp-route="@category.CategoryName">@category.CategoryName</a>
+                   asp-route-category="@category.CategoryName">@category.CategoryName</a>
             </li>
         }
-        <li class="dropdown-divider"></li>
+        <li class="divider"></li>
         <li>
-            <a asp-controller="Food" asp-action="List" asp-route="">View all fooods</a>
+            <a asp-controller="Food" asp-action="List" asp-route-category="">View all fooods</a>
         </li>
 
     </ul>

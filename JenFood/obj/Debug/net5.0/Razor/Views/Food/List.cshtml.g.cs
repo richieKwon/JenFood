@@ -34,7 +34,7 @@ using JenKitchen.ViewModels;
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"01e7d9a8367d62ec7dd0337944a7d78940f9e31c", @"/Views/Food/List.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a04c83f833753c52b4602703836c02c25373532e", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f7d7e432b4adcc0d7325dcabf2461256c2bc23d1", @"/Views/_ViewImports.cshtml")]
     public class Views_Food_List : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<FoodsListViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("name", "_FoodCard", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
