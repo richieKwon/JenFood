@@ -30,6 +30,7 @@ namespace JenFood
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IFoodRepository, FoodRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
             services.AddHttpContextAccessor();
             services.AddSession();
@@ -54,7 +55,7 @@ namespace JenFood
             app.UseStaticFiles();
             app.UseSession();
 
-            app.UseRouting();
+            app.UseRouting(); 
 
             app.UseAuthorization();
 
